@@ -43,7 +43,7 @@ server = app.server
 app.layout = html.Div(
     children=[
     
-    html.H1('CO544-2023 Lab 3: Wine Quality Prediction'),
+    html.H1('CO544 Lab 3: Wine Quality Prediction'),
     
     html.Div([
         html.H3('Exploratory Data Analysis'),
@@ -68,46 +68,78 @@ app.layout = html.Div(
     
     # Wine quality prediction based on input feature values
     html.H3("Wine Quality Prediction"),
+    
     html.Div([
         html.Label("Fixed Acidity"),
-        dcc.Input(id='fixed_acidity', type='number', required=True),    
-        html.Label("Volatile Acidity"),
-        dcc.Input(id='volatile_acidity', type='number', required=True), 
-        html.Label("Citric Acid"),
-        dcc.Input(id='citric_acid', type='number', required=True),
-        html.Br(),
-        
-        html.Label("Residual Sugar"),
-        dcc.Input(id='residual_sugar', type='number', required=True),  
-        html.Label("Chlorides"),
-        dcc.Input(id='chlorides', type='number', required=True), 
-        html.Label("Free Sulfur Dioxide"),
-        dcc.Input(id='free_sulfur_dioxide', type='number', required=True),
-        html.Br(),
-        
-        html.Label("Total Sulfur Dioxide"),
-        dcc.Input(id='total_sulfur_dioxide', type='number', required=True),
-        html.Label("Density"),
-        dcc.Input(id='density', type='number', required=True),
-        html.Label("pH"),
-        dcc.Input(id='ph', type='number', required=True),
-        html.Br(),
-        
-        html.Label("Sulphates"),
-        dcc.Input(id='sulphates', type='number', required=True),
-        html.Label("Alcohol"),
-        dcc.Input(id='alcohol', type='number', required=True),
-        html.Br(),
+        dcc.Input(id='fixed_acidity', type='number', placeholder='Enter fixed acidity...', required=True),
     ]),
-
+    
+    html.Div([
+        html.Label("Volatile Acidity"),
+        dcc.Input(id='volatile_acidity', type='number', placeholder='Enter volatile acidity...', required=True),
+    ]),
+    
+    html.Div([
+        html.Label("Citric Acid"),
+        dcc.Input(id='citric_acid', type='number', placeholder='Enter citric acid...', required=True),
+    ]),
+    
+    html.Br(),
+    
+    html.Div([
+        html.Label("Residual Sugar"),
+        dcc.Input(id='residual_sugar', type='number', placeholder='Enter residual sugar...', required=True),
+    ]),
+    
+    html.Div([
+        html.Label("Chlorides"),
+        dcc.Input(id='chlorides', type='number', placeholder='Enter chlorides...', required=True),
+    ]),
+    
+    html.Div([
+        html.Label("Free Sulfur Dioxide"),
+        dcc.Input(id='free_sulfur_dioxide', type='number', placeholder='Enter free sulfur dioxide...', required=True),
+    ]),
+    
+    html.Br(),
+    
+    html.Div([
+        html.Label("Total Sulfur Dioxide"),
+        dcc.Input(id='total_sulfur_dioxide', type='number', placeholder='Enter total sulfur dioxide...', required=True),
+    ]),
+    
+    html.Div([
+        html.Label("Density"),
+        dcc.Input(id='density', type='number', placeholder='Enter density...', required=True),
+    ]),
+    
+    html.Div([
+        html.Label("pH"),
+        dcc.Input(id='ph', type='number', placeholder='Enter pH...', required=True),
+    ]),
+    
+    html.Br(),
+    
+    html.Div([
+        html.Label("Sulphates"),
+        dcc.Input(id='sulphates', type='number', placeholder='Enter sulphates...', required=True),
+    ]),
+    
+    html.Div([
+        html.Label("Alcohol"),
+        dcc.Input(id='alcohol', type='number', placeholder='Enter alcohol...', required=True),
+    ]),
+    
+    html.Br(),
+    
     html.Div([
         html.Button('Predict', id='predict-button', n_clicks=0),
     ]),
-
+    
     html.Div([
         html.H4("Predicted Quality"),
         html.Div(id='prediction-output')
-    ])
+    ]),
 ])
 
 # Define the callback to update the correlation plot
